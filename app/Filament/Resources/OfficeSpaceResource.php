@@ -51,7 +51,7 @@ class OfficeSpaceResource extends Resource
                 Forms\Components\Repeater::make('benefits')
                     ->relationship('benefits')
                     ->schema([
-                        Forms\Components\TextInput::make('benefit')
+                        Forms\Components\TextInput::make('name')
                             ->required()
                     ]),
 
