@@ -71,10 +71,25 @@ class OfficeSpaceResource extends Resource
                     ->numeric()
                     ->prefix('Days'),
 
+                Forms\Components\TextInput::make('rating')
+                    ->helperText('1 - 5')
+                    ->required()
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(5)
+                    ->default(1),
+
                 Forms\Components\Select::make('is_open')
                     ->options([
                         true => 'Open',
                         false => 'Closed',
+                    ])
+                    ->required(),
+
+                Forms\Components\Select::make('is_popular')
+                    ->options([
+                        true => 'Popular',
+                        false => 'Not Popular',
                     ])
                     ->required(),
 
